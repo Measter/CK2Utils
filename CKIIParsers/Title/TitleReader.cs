@@ -125,6 +125,8 @@ namespace Parsers.Title
 			if( m_parentStack.Count > 0 )
 			{
 				t.Parent = m_parentStack.Peek();
+				if ( t.Parent.SubTitles.ContainsKey( tag ) )
+					t.Parent.SubTitles.Remove( tag );
 				t.Parent.SubTitles.Add( tag, t );
 			}
 
